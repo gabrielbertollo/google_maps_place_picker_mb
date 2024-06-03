@@ -1,3 +1,5 @@
+### Note: this fork adds customization to the loading page shown before the map is loaded.
+
 # Google Maps Place Picker - MB edition
 
 > This README is only slightly changed from its original repo which this repository was forked from. Due to little maintenance by the original author, I want to provide this fork that is not just more maintained, I also add more functionality to it and pick any significant changes and PRs on the original repository, as well.
