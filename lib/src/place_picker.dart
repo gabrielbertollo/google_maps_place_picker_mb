@@ -291,7 +291,8 @@ class _PlacePickerState extends State<PlacePicker> {
           future: _futureProvider,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return widget.onLoading ?? CircularProgressIndicator();
+              return widget.onLoading ??
+                  const Center(child: CircularProgressIndicator());
             } else if (snapshot.hasData) {
               provider = snapshot.data;
               return MultiProvider(
