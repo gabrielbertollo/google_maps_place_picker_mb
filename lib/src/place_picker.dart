@@ -77,7 +77,7 @@ class PlacePicker extends StatefulWidget {
     this.onMapTypeChanged,
     this.zoomGesturesEnabled = true,
     this.zoomControlsEnabled = false,
-    this.onLoading,
+    this.loadingPage,
   }) : super(key: key);
 
   final String apiKey;
@@ -235,7 +235,7 @@ class PlacePicker extends StatefulWidget {
 
   /// Customize the map's loading widget. If not provided, a default
   /// [CircularProgressIndicator] will be shown.
-  final Widget? onLoading;
+  final Widget? loadingPage;
 
   @override
   _PlacePickerState createState() => _PlacePickerState();
@@ -291,7 +291,7 @@ class _PlacePickerState extends State<PlacePicker> {
           future: _futureProvider,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return widget.onLoading ??
+              return widget.loadingPage ??
                   const Center(child: CircularProgressIndicator());
             } else if (snapshot.hasData) {
               provider = snapshot.data;
