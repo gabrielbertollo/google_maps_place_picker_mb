@@ -12,7 +12,6 @@ import 'package:google_maps_place_picker_mb/src/google_map_place_picker.dart';
 import 'package:flutter_google_maps_webservices/places.dart';
 import 'package:http/http.dart';
 import 'package:provider/provider.dart';
-import 'dart:io' show Platform;
 
 import 'package:uuid/uuid.dart';
 
@@ -368,9 +367,7 @@ class _PlacePickerState extends State<PlacePicker> {
                     Navigator.maybePop(context);
                   }
                 },
-                icon: Icon(
-                  Platform.isIOS ? Icons.arrow_back_ios : Icons.arrow_back,
-                ),
+                icon: Icon(Icons.adaptive.arrow_back),
                 color: Colors.black.withAlpha(128),
                 padding: EdgeInsets.zero)
             : Container(),
